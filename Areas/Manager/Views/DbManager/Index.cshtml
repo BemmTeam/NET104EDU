@@ -1,0 +1,12 @@
+
+
+@{
+    ViewData["Title"] = "Quản trị database";
+}
+
+@await Html.PartialAsync("_MessagePartial")
+
+<h2>Đây là trang quản trị database</h2>
+
+<a asp-area="Manager" asp-controller="DbManager" asp-action="InsertCategory"class="btn btn-primary">Insert Data Category</a>
+

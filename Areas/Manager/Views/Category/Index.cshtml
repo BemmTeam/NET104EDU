@@ -1,0 +1,42 @@
+@{
+    ViewData["Title"] = "Danh sách danh mục";
+}
+@model IEnumerable<Category>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-box">
+            <a class="btn btn-primary text-light">Thêm danh mục</a>
+            <hr>
+            <div class="table-responsive">
+                <table class="table text-nowrap">
+                    <thead>
+                        <tr>
+                            <th class="border-top-0">@Html.DisplayNameFor(itemModel => itemModel.Category_Id)</th>
+                            <th class="border-top-0">@Html.DisplayNameFor(itemModel => itemModel.Name)</th>
+                            <th class="border-top-0"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Category_Id</td>
+                                <td>@item.Name</td>
+                                <td>
+                                    <a  asp-action= "Details"  asp-route-id = "@item.Category_Id" class="btn btn-dark text-light">Detail</a>
+                                    <a class="btn btn-warning text-light">Edit</a>
+                                    <a class="btn btn-danger text-light">Delete</a>
+
+                                </td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
