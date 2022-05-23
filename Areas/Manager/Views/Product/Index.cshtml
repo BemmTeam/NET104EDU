@@ -1,0 +1,75 @@
+@model IEnumerable<NET104.Entities.Product>
+
+@{
+    ViewData["Title"] = "Danh sách sản phẩm";
+}
+
+
+
+
+<div class="row">
+    @await Html.PartialAsync("_MessagePartial")
+    <div class="col-sm-12">
+        <div class="white-box">
+            <a asp-action="Create" class="btn btn-primary text-light">Thêm danh mục</a>
+            <hr>
+            <div class="table-responsive">
+                <table class="table text-nowrap">
+                    <thead>
+                        <tr>
+                            <th class="border-top-0">
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                          
+                            <th class="border-top-0">
+                                @Html.DisplayNameFor(model => model.Quantity)
+                            </th>
+                            <th class="border-top-0">
+                                @Html.DisplayNameFor(model => model.Price)
+                            </th>
+                            <th class="border-top-0">
+                                @Html.DisplayNameFor(model => model.Image_Url)
+                            </th>
+                            <th class="border-top-0">
+                                @Html.DisplayNameFor(model => model.Category)
+                            </th>
+                            <th class="border-top-0"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                            
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Quantity)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Price)
+                                </td>
+                                <td>
+                                    <img width="50" height="50" src="~/Images/Products/@item.Image_Url" alt="">
+                                   
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Category.Name)
+                                </td>
+                                <td>
+                                    <a class="btn btn-warning text-light" asp-action="Edit" asp-route-id="@item.Product_Id">Edit</a> |
+                                    <a class="btn btn-dark text-light" asp-action="Details" asp-route-id="@item.Product_Id">Details</a> |
+                                    <a class="btn btn-danger text-light" asp-action="Delete" asp-route-id="@item.Product_Id">Delete</a>
+                                </td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

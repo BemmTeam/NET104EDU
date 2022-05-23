@@ -6,6 +6,8 @@ namespace NET104.Entities
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
+
+   
     public class Cart 
     { 
         [Key]
@@ -19,6 +21,7 @@ namespace NET104.Entities
         public User User {get; set;} //session - lưu vào trình duyệt - Object CartItem -> Json {"Product" : []}
 
         public string Items_Json {get;set;} 
+
 
         [NotMapped]
         public List<CartItem> Items {get;set;}

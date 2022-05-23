@@ -150,6 +150,40 @@ namespace NET104.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("NET104.Entities.Bill", b =>
+                {
+                    b.Property<int>("Bill_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<int>("Cart_Id")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<float>("Total")
+                        .HasColumnType("real");
+
+                    b.Property<string>("User_Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Bill_Id");
+
+                    b.HasIndex("Cart_Id");
+
+                    b.HasIndex("User_Id");
+
+                    b.ToTable("Bills");
+                });
+
             modelBuilder.Entity("NET104.Entities.Cart", b =>
                 {
                     b.Property<int>("Cart_Id")
@@ -181,6 +215,8 @@ namespace NET104.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Category_Id");
@@ -205,6 +241,8 @@ namespace NET104.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<float>("Price")
@@ -340,6 +378,23 @@ namespace NET104.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("NET104.Entities.Bill", b =>
+                {
+                    b.HasOne("NET104.Entities.Cart", "Cart")
+                        .WithMany()
+                        .HasForeignKey("Cart_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NET104.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("User_Id");
+
+                    b.Navigation("Cart");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("NET104.Entities.Cart", b =>

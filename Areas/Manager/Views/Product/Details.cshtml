@@ -1,0 +1,53 @@
+@model NET104.Entities.Product
+
+@{
+    ViewData["Title"] = "Chi tiết sản phẩm";
+}
+
+
+
+<div>
+  <a class="btn btn-primary col-3" asp-action="Index">Quay lại</a>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Desc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Desc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Image_Url)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Image_Url)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-warning text-light" asp-action="Edit" asp-route-id="@Model.Product_Id">Edit</a> |
+</div>

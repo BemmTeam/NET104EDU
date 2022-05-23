@@ -10,13 +10,13 @@ namespace NET104.Entities
         public int Product_Id {get;set;} // primary key
 
         [Column(TypeName = "nvarchar(100)")]
+
         [Display(Name = "Tên sản phẩm")]
-        [Required(ErrorMessage = "{0} là bắt buộc")]
-        [StringLength(maximumLength: 100 , ErrorMessage = "{0} chỉ nhập từ {2} đến {1} ký tự" , MinimumLength = 5 )]
         public string Name {get;set;}
 
         [Column(TypeName = "ntext")]
-        [Display(Name = "Mô tả sản phẩm")]
+
+        [Display(Name = "Mô tả")]
 
         public string Desc {get;set;}
 
@@ -28,8 +28,8 @@ namespace NET104.Entities
 
         public float Price {get;set;} 
 
+        
         [Display(Name = "Hình ảnh")]
-
         public string Image_Url {get;set;}
 
         // xác định khóa ngoại
