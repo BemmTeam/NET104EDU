@@ -12,8 +12,10 @@ namespace NET104.Entities
 
         [Column(TypeName = "nvarchar(100)")]
         [Display(Name = "Tên danh mục")]
+        [Required(ErrorMessage = "{0} là phải nhập")]  // arr = {tendanhmuc, max , min}
+        [StringLength(maximumLength: 100, ErrorMessage = "{0} nhập từ {2} đến {1}" , MinimumLength = 3)]
 
-        public string Name {get;set;}
+        public string Name {get;set;} 
 
     }
 }

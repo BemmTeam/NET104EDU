@@ -155,3 +155,11 @@ C:\Users\Admin\Desktop\NET104\obj\Debug\net5.0\Razor\Areas\Manager\Views\_ViewSt
 C:\Users\Admin\Desktop\NET104\obj\Debug\net5.0\Razor\Views\Shared\_MessagePartial.cshtml.g.cs
 C:\Users\Admin\Desktop\NET104\obj\Debug\net5.0\Razor\Areas\Manager\Views\Category\Index.cshtml.g.cs
 C:\Users\Admin\Desktop\NET104\obj\Debug\net5.0\Razor\Areas\Manager\Views\Category\Details.cshtml.g.cs
+C:\Users\Admin\Desktop\NET104\obj\Debug\net5.0\Razor\Areas\Manager\Views\Category\Create.cshtml.g.cs
+C:\Users\Admin\Desktop\NET104\obj\Debug\net5.0\Razor\Areas\Manager\Views\Category\Delete.cshtml.g.cs
+C:\Users\Admin\Desktop\NET104\obj\Debug\net5.0\Razor\Areas\Manager\Views\Category\Edit.cshtml.g.cs
+C:\Users\Admin\Desktop\NET104\obj\Debug\net5.0\Razor\Areas\Manager\Views\Product\Create.cshtml.g.cs
+C:\Users\Admin\Desktop\NET104\obj\Debug\net5.0\Razor\Areas\Manager\Views\Product\Delete.cshtml.g.cs
+C:\Users\Admin\Desktop\NET104\obj\Debug\net5.0\Razor\Areas\Manager\Views\Product\Details.cshtml.g.cs
+C:\Users\Admin\Desktop\NET104\obj\Debug\net5.0\Razor\Areas\Manager\Views\Product\Edit.cshtml.g.cs
+C:\Users\Admin\Desktop\NET104\obj\Debug\net5.0\Razor\Areas\Manager\Views\Product\Index.cshtml.g.cs

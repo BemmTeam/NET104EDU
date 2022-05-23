@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = "Chi tiết danh mục";
+    ViewData["Title"] = "Xóa danh mục danh mục";
 }
 @model Category;
 
@@ -28,8 +28,9 @@
                     <!-- Column -->
                     <div class="col-lg-8 col-xlg-9 col-md-12">
                         <div class="card">
+                            <h3 class="card-header text-danger">Bạn có chắc muốn xóa danh mục này không ?</h3>
                             <div class="card-body">
-                                <form class="form-horizontal form-material">
+                                <form method="post" asp-action="Delete" asp-route-id="@Model.Category_Id" class="form-horizontal form-material">
                                     <div class="form-group mb-4">
                                         <label class="col-md-12 p-0">@Html.DisplayNameFor(item => item.Category_Id)</label>
                                         <div class="col-md-12 border-bottom p-0">
@@ -47,9 +48,7 @@
                                  
                                     <div class="form-group mb-4">
                                         <div class="col-sm-12">
-                                            <button class="btn btn-warning">Edit</button>
-                                            <button class="btn btn-danger">Delete</button>
-
+                                            <button type="submit" class="btn btn-danger text-light">Xác nhận xóa</button>
                                         </div>
                                     </div>
                                 </form>
