@@ -1,13 +1,11 @@
 @model NET104.Entities.Bill
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Chi tiết hóa đơn";
 }
 
-<h1>Details</h1>
-
 <div>
-    <h4>Bill</h4>
+  <a class="btn btn-primary col-3" asp-action="Index">Quay lại</a>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -49,6 +47,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Bill_Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a  class="btn btn-warning text-light" asp-action="Edit" asp-route-id="@Model.Bill_Id">Edit</a> |
+
 </div>

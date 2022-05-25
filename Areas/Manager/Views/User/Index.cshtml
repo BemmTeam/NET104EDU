@@ -1,0 +1,83 @@
+@model IEnumerable<NET104.Entities.User>
+
+@{
+    ViewData["Title"] = "Danh sách user";
+}
+
+
+
+
+
+<div class="row">
+    @await Html.PartialAsync("_MessagePartial")
+    <div class="col-sm-12">
+        <div class="white-box">
+            <hr>
+            <div class="table-responsive">
+                <table class="table text-nowrap">
+                    <thead>
+
+                        <tr>
+                            <th class="border-top-0">
+                                @Html.DisplayNameFor(model => model.FullName)
+                            </th>
+                            <th class="border-top-0">
+                                @Html.DisplayNameFor(model => model.HomeAddress)
+                            </th>
+                            <th class="border-top-0">
+                                @Html.DisplayNameFor(model => model.UserName)
+                            </th>
+                         
+                            <th class="border-top-0">
+                                @Html.DisplayNameFor(model => model.Email)
+                            </th>
+                            
+                         
+                            <th class="border-top-0">
+                                @Html.DisplayNameFor(model => model.PhoneNumber)
+                            </th>
+                            
+                         
+                            <th class="border-top-0"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FullName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.HomeAddress)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UserName)
+                                </td>
+                           
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                             
+                               
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                                </td>
+                               
+                             
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                </td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

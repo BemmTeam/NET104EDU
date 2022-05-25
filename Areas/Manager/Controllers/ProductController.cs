@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using NET104;
 using NET104.Entities;
 using NET104.Helper;
-
+using Z.PagedList;
 namespace NET104.Areas.Controllers
 {
     [Area("Manager")]
@@ -29,12 +29,28 @@ namespace NET104.Areas.Controllers
         }
 
         // GET: Product
-        public async Task<IActionResult> Index()
+        [HttpGet("/Manager")]
+        public async Task<IActionResult> Index(int? page , string searchString)
         {
+            page??= 1;
             var shopContext = _context.Products.Include(p => p.Category);
-            return View(await shopContext.ToListAsync());
-        }
+            
+            IQueryable<Product> products =  shopContext;
 
+            if(!string.IsNullOrEmpty(searchString)) 
+            {
+                products = products.Where(product => product.Name.ToLower().Contains(searchString.ToLower()));
+                ViewBag.searchString = searchString;
+            }
+            return View (await products.ToPagedListAsync((int)page, 5));
+        }
+        // IEnumrable (List, string[] , array ...) => in-memory
+            // IEnumrable<Product> products = context.Products.Select(p => p).Take(10);
+                // B1. products = select * form Products 
+                // B2. Select top products
+        // Iqueryable => out-memory 
+            // Iqueryable<Product> products = context.Products.Select(p => p).Take(10);
+                // B1. products = select top 10 * form products 
         // GET: Product/Details/5
         public async Task<IActionResult> Details(int? id)
         {

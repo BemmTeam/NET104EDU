@@ -12,23 +12,23 @@ namespace NET104.Areas.Controllers
 {
     [Area("Manager")]
     [Route("Manager/[controller]/[action]")]
-    public class BillController : Controller
+    public class CartController : Controller
     {
         private readonly ShopContext _context;
 
-        public BillController(ShopContext context)
+        public CartController(ShopContext context)
         {
             _context = context;
         }
 
-        // GET: Bill
+        // GET: Cart
         public async Task<IActionResult> Index()
         {
-            var shopContext = _context.Bills.Include(b => b.Cart).Include(b => b.User);
+            var shopContext = _context.Carts.Include(c => c.User);
             return View(await shopContext.ToListAsync());
         }
 
-        // GET: Bill/Details/5
+        // GET: Cart/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -36,45 +36,42 @@ namespace NET104.Areas.Controllers
                 return NotFound();
             }
 
-            var bill = await _context.Bills
-                .Include(b => b.Cart)
-                .Include(b => b.User)
-                .FirstOrDefaultAsync(m => m.Bill_Id == id);
-            if (bill == null)
+            var cart = await _context.Carts
+                .Include(c => c.User)
+                .FirstOrDefaultAsync(m => m.Cart_Id == id);
+            if (cart == null)
             {
                 return NotFound();
             }
 
-            return View(bill);
+            return View(cart);
         }
 
-        // GET: Bill/Create
+        // GET: Cart/Create
         public IActionResult Create()
         {
-            ViewData["Cart_Id"] = new SelectList(_context.Carts, "Cart_Id", "Cart_Id");
             ViewData["User_Id"] = new SelectList(_context.Users, "Id", "Id");
             return View();
         }
 
-        // POST: Bill/Create
+        // POST: Cart/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Bill_Id,Status,CreatedDate,Address,Total,Cart_Id,User_Id")] Bill bill)
+        public async Task<IActionResult> Create([Bind("Cart_Id,CreatedDate,User_Id,Items_Json")] Cart cart)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(bill);
+                _context.Add(cart);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Cart_Id"] = new SelectList(_context.Carts, "Cart_Id", "Cart_Id", bill.Cart_Id);
-            ViewData["User_Id"] = new SelectList(_context.Users, "Id", "Id", bill.User_Id);
-            return View(bill);
+            ViewData["User_Id"] = new SelectList(_context.Users, "Id", "Id", cart.User_Id);
+            return View(cart);
         }
 
-        // GET: Bill/Edit/5
+        // GET: Cart/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -82,24 +79,23 @@ namespace NET104.Areas.Controllers
                 return NotFound();
             }
 
-            var bill = await _context.Bills.FindAsync(id);
-            if (bill == null)
+            var cart = await _context.Carts.FindAsync(id);
+            if (cart == null)
             {
                 return NotFound();
             }
-            ViewData["Cart_Id"] = new SelectList(_context.Carts, "Cart_Id", "Cart_Id", bill.Cart_Id);
-            ViewData["User_Id"] = new SelectList(_context.Users, "Id", "Id", bill.User_Id);
-            return View(bill);
+            ViewData["User_Id"] = new SelectList(_context.Users, "Id", "Id", cart.User_Id);
+            return View(cart);
         }
 
-        // POST: Bill/Edit/5
+        // POST: Cart/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Bill_Id,Status,CreatedDate,Address,Total,Cart_Id,User_Id")] Bill bill)
+        public async Task<IActionResult> Edit(int id, [Bind("Cart_Id,CreatedDate,User_Id,Items_Json")] Cart cart)
         {
-            if (id != bill.Bill_Id)
+            if (id != cart.Cart_Id)
             {
                 return NotFound();
             }
@@ -108,12 +104,12 @@ namespace NET104.Areas.Controllers
             {
                 try
                 {
-                    _context.Update(bill);
+                    _context.Update(cart);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!BillExists(bill.Bill_Id))
+                    if (!CartExists(cart.Cart_Id))
                     {
                         return NotFound();
                     }
@@ -124,12 +120,11 @@ namespace NET104.Areas.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Cart_Id"] = new SelectList(_context.Carts, "Cart_Id", "Cart_Id", bill.Cart_Id);
-            ViewData["User_Id"] = new SelectList(_context.Users, "Id", "Id", bill.User_Id);
-            return View(bill);
+            ViewData["User_Id"] = new SelectList(_context.Users, "Id", "Id", cart.User_Id);
+            return View(cart);
         }
 
-        // GET: Bill/Delete/5
+        // GET: Cart/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -137,32 +132,31 @@ namespace NET104.Areas.Controllers
                 return NotFound();
             }
 
-            var bill = await _context.Bills
-                .Include(b => b.Cart)
-                .Include(b => b.User)
-                .FirstOrDefaultAsync(m => m.Bill_Id == id);
-            if (bill == null)
+            var cart = await _context.Carts
+                .Include(c => c.User)
+                .FirstOrDefaultAsync(m => m.Cart_Id == id);
+            if (cart == null)
             {
                 return NotFound();
             }
 
-            return View(bill);
+            return View(cart);
         }
 
-        // POST: Bill/Delete/5
+        // POST: Cart/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var bill = await _context.Bills.FindAsync(id);
-            _context.Bills.Remove(bill);
+            var cart = await _context.Carts.FindAsync(id);
+            _context.Carts.Remove(cart);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool BillExists(int id)
+        private bool CartExists(int id)
         {
-            return _context.Bills.Any(e => e.Bill_Id == id);
+            return _context.Carts.Any(e => e.Cart_Id == id);
         }
     }
 }

@@ -2361,6 +2361,30 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Z.PagedList/8.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Z.PagedList.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Z.PagedList.dll": {}
+        }
+      },
+      "Z.PagedList.Mvc.Core/8.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Z.PagedList": "8.1.0"
+        },
+        "compile": {
+          "lib/net5.0/Z.PagedList.Mvc.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Z.PagedList.Mvc.Core.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -7888,6 +7912,34 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "Z.PagedList/8.1.0": {
+      "sha512": "A32y8EUbZy6yankU673qAxeLF85hTLN9nQqxj2Ot0OQYLOH1XvTMca0OpvJsCOQfrqJHGRfj5MIDNv7baVR6GQ==",
+      "type": "package",
+      "path": "z.pagedlist/8.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/netstandard2.0/Z.PagedList.dll",
+        "lib/netstandard2.0/Z.PagedList.xml",
+        "z.pagedlist.8.1.0.nupkg.sha512",
+        "z.pagedlist.nuspec"
+      ]
+    },
+    "Z.PagedList.Mvc.Core/8.1.0": {
+      "sha512": "dJN8GrqHwr8vFssBl4vDUqVVmP/T4/0h+1tdomDraxrF1jlG2Fpr23JdtVBIK5ADg++uYITpfBAh5msEbldQWA==",
+      "type": "package",
+      "path": "z.pagedlist.mvc.core/8.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/net5.0/Z.PagedList.Mvc.Core.dll",
+        "lib/net5.0/Z.PagedList.Mvc.Core.xml",
+        "z.pagedlist.mvc.core.8.1.0.nupkg.sha512",
+        "z.pagedlist.mvc.core.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -7898,7 +7950,8 @@
       "Microsoft.EntityFrameworkCore >= 5.0.17",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.17",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.17",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
+      "Z.PagedList.Mvc.Core >= 8.1.0"
     ]
   },
   "packageFolders": {
@@ -7969,6 +8022,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[5.0.2, )"
+          },
+          "Z.PagedList.Mvc.Core": {
+            "target": "Package",
+            "version": "[8.1.0, )"
           }
         },
         "imports": [

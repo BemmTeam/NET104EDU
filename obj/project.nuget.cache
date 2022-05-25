@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GD1b9bdvsgJPBiQVG/dadkUQ6ed76r/S1sj9C5M99AdcvmR61WNSagVx0rh3yPl74Ifo1oCXoidH/ZzUCIPNKw==",
+  "dgSpecHash": "hVUrfH4zvuBoIB34PNJ2IwdodqDibBIzuVVeSAI27mJsJo23CmzdBH+sXvSWhkmMyKYlhgthEjgqH7erxV5xlQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Desktop\\NET104\\NET104.csproj",
   "expectedPackageFiles": [
@@ -153,7 +153,9 @@
     "C:\\Users\\Admin\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\Admin\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\z.pagedlist\\8.1.0\\z.pagedlist.8.1.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\z.pagedlist.mvc.core\\8.1.0\\z.pagedlist.mvc.core.8.1.0.nupkg.sha512"
   ],
   "logs": []
 }

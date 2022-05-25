@@ -1,0 +1,60 @@
+@model IEnumerable<NET104.Entities.Cart>
+
+@{
+    ViewData["Title"] = "Danh sách giỏ hàng";
+}
+
+
+
+
+
+<div class="row">
+    @await Html.PartialAsync("_MessagePartial")
+    <div class="col-sm-12">
+        <div class="white-box">
+            @* <a asp-action="Create" class="btn btn-primary text-light">Thêm danh mục</a> *@
+            <hr>
+            <div class="table-responsive">
+                <table class="table text-nowrap">
+                    <thead>
+                        <tr>
+                            <th class="border-top-0">
+                                @Html.DisplayNameFor(model => model.CreatedDate)
+                            </th>
+                            <th class="border-top-0">
+                                @Html.DisplayNameFor(model => model.User)
+                            </th>
+                            <th class="border-top-0">
+                                @Html.DisplayNameFor(model => model.Items_Json)
+                            </th>
+                            <th class="border-top-0"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.User.Id)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Items_Json)
+                                </td>
+                                <td>
+                                    <a class="btn btn-warning text-light" asp-action="Edit" asp-route-id="@item.Cart_Id">Edit</a> |
+                                    <a class="btn btn-dark text-light" asp-action="Details" asp-route-id="@item.Cart_Id">Details</a> |
+                                    <a class="btn btn-danger text-light" asp-action="Delete" asp-route-id="@item.Cart_Id">Delete</a>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -15629,18 +15629,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Areas\\Manager\\Views\\Cart\\Details.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Cart\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Views\\Shared\\_MessagePartial.cshtml",
       "TargetPath": "Views\\Shared\\_MessagePartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Views\\Bill\\Details.cshtml",
-      "TargetPath": "Views\\Bill\\Details.cshtml",
+      "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Areas\\Manager\\Views\\User\\Details.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\User\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Views\\Bill\\Delete.cshtml",
-      "TargetPath": "Views\\Bill\\Delete.cshtml",
+      "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Areas\\Manager\\Views\\Cart\\Delete.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Cart\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15649,13 +15654,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Views\\Bill\\Index.cshtml",
-      "TargetPath": "Views\\Bill\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Views\\Bill\\Create.cshtml",
-      "TargetPath": "Views\\Bill\\Create.cshtml",
+      "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Areas\\Manager\\Views\\User\\Delete.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\User\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15674,11 +15674,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Views\\Bill\\Edit.cshtml",
-      "TargetPath": "Views\\Bill\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -15689,8 +15684,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Areas\\Manager\\Views\\User\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\User\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Areas\\Manager\\Views\\Category\\Delete.cshtml",
       "TargetPath": "Areas\\Manager\\Views\\Category\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Areas\\Manager\\Views\\Bill\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Bill\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Areas\\Manager\\Views\\Bill\\Delete.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Bill\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15701,6 +15711,11 @@
     {
       "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Areas\\Manager\\Views\\Product\\Details.cshtml",
       "TargetPath": "Areas\\Manager\\Views\\Product\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Areas\\Manager\\Views\\User\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\User\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15716,6 +15731,11 @@
     {
       "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Views\\Shared\\_LayoutAdmin.cshtml",
       "TargetPath": "Views\\Shared\\_LayoutAdmin.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Areas\\Manager\\Views\\Cart\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Cart\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15739,6 +15759,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Areas\\Manager\\Views\\Cart\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Cart\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -15751,6 +15776,16 @@
     {
       "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Areas\\Manager\\Views\\Product\\Edit.cshtml",
       "TargetPath": "Areas\\Manager\\Views\\Product\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Areas\\Manager\\Views\\Bill\\Details.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Bill\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin\\Desktop\\NET104\\Areas\\Manager\\Views\\Bill\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Bill\\Edit.cshtml",
       "FileKind": "mvc"
     }
   ],

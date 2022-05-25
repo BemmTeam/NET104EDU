@@ -1,9 +1,10 @@
-@model IPagedList<NET104.Entities.Product>
-@using Z.PagedList;
-@using Z.PagedList.Mvc.Core;
+@model IEnumerable<NET104.Entities.Bill>
+
+
 @{
-    ViewData["Title"] = "Danh sách sản phẩm";
+    ViewData["Title"] = "Danh sách hóa đơn";
 }
+
 
 
 
@@ -12,36 +13,26 @@
     @await Html.PartialAsync("_MessagePartial")
     <div class="col-sm-12">
         <div class="white-box">
-            <a asp-action="Create" class="btn btn-primary text-light">Thêm danh mục</a>
-            <form method="get"  class="row mt-2">
-                <div class="col-11">
-                    <input id="searchString" value="@ViewBag.searchString" name="searchString" class="col-12 form-control" placeholder="Nhập tên sản phẩm" type="text">
-                </div>
-                <div class="col-1">
-                    <button type="submit" class="col-12 btn btn-success">Tìm kiếm</button>
-                </div>
-            </form>
             <hr>
             <div class="table-responsive">
                 <table class="table text-nowrap">
                     <thead>
                         <tr>
                             <th class="border-top-0">
-                            Tên sản phẩm
+                                @Html.DisplayNameFor(model => model.Status)
                             </th>
 
                             <th class="border-top-0">
-                            Số lượng
-
+                                @Html.DisplayNameFor(model => model.CreatedDate)
                             </th>
                             <th class="border-top-0">
-                            Giá sản phẩm
+                                @Html.DisplayNameFor(model => model.Address)
                             </th>
                             <th class="border-top-0">
-                            Hình ảnh
+                                @Html.DisplayNameFor(model => model.Cart)
                             </th>
                             <th class="border-top-0">
-                            Danh mục
+                                @Html.DisplayNameFor(model => model.User)
                             </th>
                             <th class="border-top-0"></th>
                         </tr>
@@ -52,29 +43,29 @@
                         {
                             <tr>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Name)
+                                    @Html.DisplayFor(modelItem => item.Status)
                                 </td>
 
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Quantity)
+                                    @Html.DisplayFor(modelItem => item.CreatedDate)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Price)
+                                    @Html.DisplayFor(modelItem => item.Address)
+                                </td>
+                              
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Cart.Cart_Id)
                                 </td>
                                 <td>
-                                    <img width="50" height="50" src="~/Images/Products/@item.Image_Url" alt="">
-
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Category.Name)
+                                    @Html.DisplayFor(modelItem => item.User.Id)
                                 </td>
                                 <td>
                                     <a class="btn btn-warning text-light" asp-action="Edit"
-                                    asp-route-id="@item.Product_Id">Edit</a> |
+                                    asp-route-id="@item.Bill_Id">Edit</a> |
                                     <a class="btn btn-dark text-light" asp-action="Details"
-                                    asp-route-id="@item.Product_Id">Details</a> |
+                                    asp-route-id="@item.Bill_Id">Details</a> |
                                     <a class="btn btn-danger text-light" asp-action="Delete"
-                                    asp-route-id="@item.Product_Id">Delete</a>
+                                    asp-route-id="@item.Bill_Id">Delete</a>
                                 </td>
                             </tr>
                         }
@@ -83,10 +74,10 @@
                     </tbody>
                 </table>
             </div>
-           @Html.PagedListPager(Model,page => Url.Action("Index" , new {page  , searchString = ViewBag.searchString}),new Z.PagedList.Web.Common.PagedListRenderOptions{
-               LiElementClasses = new string[] {"page-item"},
-               PageClasses = new string[] {"page-link"},
-           })
         </div>
     </div>
 </div>
+
+
+
+

@@ -1,0 +1,63 @@
+@model NET104.Entities.Cart
+
+@{
+    ViewData["Title"] = "Sửa giỏ hàng";
+}
+
+
+
+
+
+
+<div class="row">
+    @await Html.PartialAsync("_MessagePartial")
+    <div class="col-sm-12">
+        <a class="btn btn-primary col-3" asp-action="Index">Quay lại</a>
+        <hr>
+        <div class="white-box row">
+
+            <div class="col-lg-4 col-xlg-3 col-md-12">
+                <div class="white-box">
+
+
+                </div>
+            </div>
+            <!-- Column -->
+            <!-- Column -->
+            <div class="col-lg-12 col-xlg-9 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="post" asp-action="Edit" asp-route-id="@Model.Cart_Id" class="form-horizontal form-material">
+                            <input type="hidden" asp-for="Cart_Id" />
+                            <div class="form-group mb-4">
+                                <label asp-for="CreatedDate" class="col-md-12 p-0"></label>
+                                <input asp-for="CreatedDate" class="form-control p-0 border-0" />
+                                <span asp-validation-for="CreatedDate" class="text-danger"></span>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label asp-for="User_Id" class="col-md-12 p-0"></label>
+                                <select asp-for="User_Id" class="form-control p-0 border-0" asp-items="ViewBag.User_Id"></select>
+                                <span asp-validation-for="User_Id" class="text-danger"></span>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label asp-for="Items_Json" class="col-md-12 p-0"></label>
+                                <input asp-for="Items_Json" class="form-control p-0 border-0" />
+                                <span asp-validation-for="Items_Json" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group mb-4">
+                                <div class="col-sm-12">
+                                    <button type="submit" class="btn btn-success">Cập nhật</button>
+
+                                </div>
+                            </div>
+
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

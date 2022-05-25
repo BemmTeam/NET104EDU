@@ -23,12 +23,21 @@ namespace NET104.Entities
         [Key]
         public int Bill_Id {get;set;}
 
+        [Display(Name = "Trạng thái")]
         public StatusType Status {get;set;}
+
+        [Display(Name = "Ngày mua")]
 
         public DateTime CreatedDate {get;set;}
 
        [Column(TypeName = "nvarchar(200)")]
+        [Display(Name = "Địa chỉ")]
+        [Required]
+        
         public string Address {get;set;}
+
+        [Display(Name = "Tổng tiền")]
+        [Required]
 
         public float Total {get;set;}
 
